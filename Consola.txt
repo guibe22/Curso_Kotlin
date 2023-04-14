@@ -1,0 +1,148 @@
+PEQUEÑOS EJERCIOS HECHOS EN EL PLAYGRORUND DE KOTLIN
+
+
+fun main() {
+    println("Hola Mundo!")
+}
+----------------------------------------------------------
+
+fun main() {
+    println("1")
+    println("2")
+    println("3")
+}
+----------------------------------------------------------
+
+fun main() {
+    println("Tuesday")
+    println("Thursday")
+    println("Wednesday")
+    println("Friday")
+    println("Monday")
+}
+
+fun main() {
+    val count: Int = 2
+    println(count)
+}
+----------------------------------------------------------
+
+fun main() {
+    var cartTotal = 0
+    println("Total: $cartTotal")
+
+    cartTotal = 20
+    println("Total: $cartTotal")
+}
+----------------------------------------------------------
+
+fun main() {
+    var count = 10
+    println("You have $count unread messages.")
+    count = count + 1
+    println("You have $count unread messages.")
+}
+
+----------------------------------------------------------
+fun main() {
+	birthdayGreeting()
+}
+
+fun birthdayGreeting() : Unit {
+    println("Felicidades, Wilber!")
+    println("Ahora tienes 20 años!")
+}
+
+----------------------------------------------------------
+
+fun main() {
+	
+    println(birthdayGreeting())
+}
+
+fun birthdayGreeting(): String {
+    val nameGreeting = "Felicidades, Wilber!!"
+    val ageGreeting = "Ahora tienes 20 años!!"
+    return "$nameGreeting\n$ageGreeting"
+}
+----------------------------------------------------------
+fun main() {
+	
+    println(birthdayGreeting("Wilber", 20))
+}
+
+fun birthdayGreeting(name: String, age: Int): String {
+    val nameGreeting = "Happy Birthday, $name!"
+    val ageGreeting = "You are now $age years old!"
+    return "$nameGreeting\n$ageGreeting"
+}
+----------------------------------------------------------
+
+fun main() {
+	
+    println(birthdayGreeting(age = 5))
+}
+
+fun birthdayGreeting(name: String = "Rover", age: Int): String {
+    return "Happy Birthday, $name! You are now $age years old!"
+}
+
+----------------------------------------------------------
+
+fun main() {
+	
+    println("Use the val keyword when the value doesn't change.")
+   	println("Use the var keyword when the value can change.")
+    println("When you define a function, you define the parameters that can be passed to it.")
+    println("When you call a function, you pass arguments for the parameters.")
+}
+
+----------------------------------------------------------
+
+
+fun main() {
+    val firstNumber = 10
+    val secondNumber = 5
+    val thirdNumber = 8
+
+    val result = add(firstNumber, secondNumber)
+    val anotherResult = add(firstNumber, thirdNumber)
+
+    println("$firstNumber + $secondNumber = $result")
+    println("$firstNumber + $thirdNumber = $anotherResult")
+}
+
+fun add(firstNumber:Int , secondNumber:Int):Int{
+    return firstNumber + secondNumber
+}
+
+fun subtract(firstNumber:Int , secondNumber:Int):Int{
+    return firstNumber - secondNumber
+}
+
+----------------------------------------------------------
+fun main() {
+    val firstUserEmailId = "user_one@gmail.com"
+
+    // The following line of code assumes that you named your parameter as emailId.
+    // If you named it differently, feel free to update the name.
+    println(displayAlertMessage(emailId = firstUserEmailId))
+    println()
+
+    val secondUserOperatingSystem = "Windows"
+    val secondUserEmailId = "user_two@gmail.com"
+
+    println(displayAlertMessage(secondUserOperatingSystem, secondUserEmailId))
+    println()
+
+    val thirdUserOperatingSystem = "Mac OS"
+    val thirdUserEmailId = "user_three@gmail.com"
+
+    println(displayAlertMessage(thirdUserOperatingSystem, thirdUserEmailId))
+    println()
+}
+
+
+fun displayAlertMessage(operatingSystem:String ="Unknown OS",emailId: String ):String{
+    return "There's a new sign-in request $operatingSystem for your Google Account $emailId ."
+}
