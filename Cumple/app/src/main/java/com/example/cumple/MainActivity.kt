@@ -1,11 +1,9 @@
 package com.example.cumple
 
 import android.os.Bundle
+import android.provider.Settings.Global.getString
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -15,8 +13,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.cumple.ui.theme.CumpleTheme
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +32,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    BirthdayGreetingWithImage("Happy Birthday Sam!", "- from Emma")
+                    BirthdayGreetingWithImage(getString(R.string.Feliz_Cumple_Mallimy), getString(R.string.De_parte_de_Wilber))
                 }
             }
         }
@@ -41,12 +45,14 @@ fun Greeting(name: String) {
 }
 @Composable
 fun BirthdayGreetingWithImage(message: String, from: String, modifier: Modifier = Modifier) {
-    val image = painterResource(R.drawable.androidparty)
+    val image = painterResource(R.drawable.androidparty2)
 
     Box{
         Image(
             painter = image,
-            contentDescription = null
+            contentDescription = null ,
+            contentScale = ContentScale.Crop,
+            alpha = 0.5F
         )
         BirthdayGreetingWithText(message = message, from = from)
 
@@ -60,14 +66,23 @@ fun BirthdayGreetingWithImage(message: String, from: String, modifier: Modifier 
 @Composable
 fun BirthdayGreetingWithText(message: String, from: String,modifier: Modifier = Modifier) {
 
-    Column(modifier = modifier){
+    Column(
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier
+    ){
+
             Text(
                 text = message,
-                fontSize = 36.sp,
+                fontSize = 50.sp,
+                lineHeight = 70.sp,
+                textAlign = TextAlign.Center
             )
             Text(
                 text = from,
-                fontSize = 24.sp,
+                fontSize = 26.sp,
+                modifier = Modifier
+                    .padding(16.dp)
+                    .align(alignment = Alignment.CenterHorizontally)
             )
         }
 
@@ -78,6 +93,8 @@ fun BirthdayGreetingWithText(message: String, from: String,modifier: Modifier = 
 @Composable
 fun BirthdayCardPreview() {
     CumpleTheme {
-        BirthdayGreetingWithImage("FElI CUMPLE jEURY", "- DE PARTE DE RAYSA")
+        BirthdayGreetingWithImage(stringResource(R.string.Feliz_Cumple_Mallimy), stringResource(R.string.De_parte_de_Wilber))
     }
 }
+
+
