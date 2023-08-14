@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Lemonade</string>
+    <string name="select_a_lemon">Pulsa el arbol de limon para seleccionar un limon</string>
+    <string name="squeeze_it">Pulsa varias veces para exprimir el limon</string>
+    <string name="drink_it">Pulsa para beber la limonada</string>
+    <string name="start_again">Pulsa el vaso para comenzar otra vez</string>
+
+    <string name="Lemon_tree">Lemon tree</string>
+    <string name="Lemon">Lemon</string>
+    <string name="Glass_of_lemonade">Glass of lemonade</string>
+    <string name="Empty_glass">Empty glass</string>
+
+
+</resources>
