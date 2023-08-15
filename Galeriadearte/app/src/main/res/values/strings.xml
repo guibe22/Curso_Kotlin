@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Galeria de arte</string>
+
+    <string name="Monalisa">Monalisa</string>
+    <string name="da_Vinci">Leonardo da Vinci (1452 - 1519)</string>
+
+    <string name="noche_estrellada">La noche estrellada</string>
+    <string name="Van_Gogh"> Van Gogh (1853 - 1890)</string>
+
+    <string name="El_grito">El grito</string>
+    <string name="Edvard_Munch"> Edvard Munch (1863 - 1944)</string>
+
+    <string name="El_beso">El beso</string>
+    <string name="Gustav_Klimt"> Gustav Klimt (1862 - 1918)</string>
+
+
+
+
+
+</resources>
